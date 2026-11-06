@@ -280,23 +280,18 @@ export default function MuhariChatWidget() {
       >
         {/* Header Widget Ringkas Identik FokusKonten */}
         <div className="bg-neutral-950 px-4 py-3 flex items-center justify-between border-b border-neutral-800">
-          <div className="flex items-center gap-2.5">
-            <div className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-emerald-400 shadow-soft shrink-0">
+          <div className="flex items-center gap-3">
+            <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-emerald-400 shadow-md shrink-0 bg-neutral-900">
               <img
                 src="/brand/muhari-chat-avatar.jpg"
                 alt="Muhari Amsori"
-                className="w-full h-full object-cover object-[45%_25%]"
+                className="w-full h-full object-cover"
               />
             </div>
             <div>
-              <div className="flex items-center gap-1.5">
-                <h3 className="text-white font-display font-bold text-sm tracking-tight">Muhari Amsori</h3>
-                <span className="text-[10px] bg-neutral-800 text-neutral-200 px-1.5 py-0.5 rounded font-mono font-bold border border-neutral-700">AI</span>
-              </div>
-              <p className="text-emerald-400 text-[11px] font-medium flex items-center gap-1 mt-0.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                Online • Asisten Digital
-              </p>
+              <h3 className="text-white font-display font-bold text-base tracking-tight leading-none">
+                Muhari Amsori
+              </h3>
             </div>
           </div>
 
