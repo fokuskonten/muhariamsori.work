@@ -1383,32 +1383,32 @@ export default function HomePage() {
           <div className="space-y-8 sm:space-y-16 lg:space-y-20">
             
             {/* KARTU 01: PANGGUNG DECK INTERAKTIF KHUSUS KONTEN IMPLEMENTASI SOFTWARE */}
-            <div data-reveal data-spotlight id="keahlian-software">
+            <div data-reveal id="keahlian-software">
               <SpecializationDeck id="kontainer-keahlian-software" slides={softwareSlides} />
             </div>
 
             {/* KARTU 02: PANGGUNG DECK INTERAKTIF KHUSUS E-COMMERCE & MARKETPLACE SPECIALIST */}
-            <div data-reveal data-spotlight id="keahlian-ecommerce">
+            <div data-reveal id="keahlian-ecommerce">
               <SpecializationDeck id="kontainer-keahlian-ecommerce" slides={ecommerceSlides} />
             </div>
 
             {/* KARTU 03: PANGGUNG DECK INTERAKTIF KHUSUS FOTOGRAFI, VIDEOGRAFI & MULTIMEDIA */}
-            <div data-reveal data-spotlight id="keahlian-fotografi">
+            <div data-reveal id="keahlian-fotografi">
               <SpecializationDeck id="kontainer-keahlian-fotografi" slides={fotografiSlides} />
             </div>
 
             {/* KARTU 04: PANGGUNG DECK INTERAKTIF KHUSUS DIY WOODS & POWERTOOLS */}
-            <div data-reveal data-spotlight id="keahlian-woodworking">
+            <div data-reveal id="keahlian-woodworking">
               <SpecializationDeck id="kontainer-keahlian-woodworking" slides={woodworkingSlides} />
             </div>
 
             {/* KARTU 05: PANGGUNG DECK INTERAKTIF KHUSUS DESAINER KATALOG PERCETAKAN, MASTER PLAT & SABLON */}
-            <div data-reveal data-spotlight id="keahlian-percetakan">
+            <div data-reveal id="keahlian-percetakan">
               <SpecializationDeck id="kontainer-keahlian-percetakan" slides={percetakanSlides} />
             </div>
 
             {/* KARTU 06: PANGGUNG DECK INTERAKTIF KHUSUS ADAPTASI ROBOTIKA, SOLIDWORKS & OPERASIONAL PABRIK */}
-            <div data-reveal data-spotlight id="keahlian-manufaktur">
+            <div data-reveal id="keahlian-manufaktur">
               <SpecializationDeck id="kontainer-keahlian-manufaktur" slides={manufakturSlides} />
             </div>
 

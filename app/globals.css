@@ -8,14 +8,14 @@
   html {
     scroll-behavior: smooth;
     scroll-snap-type: y proximity;
+    scroll-padding-top: 64px;
+    scroll-padding-bottom: 24px;
   }
 
-  /* Snap khusus kontainer keahlian: Mengunci posisi presisi di dead-center layar ponsel & desktop (Smart Scroll) */
+  /* Snap khusus kontainer keahlian: Mengunci posisi presisi di dead-center area pandang nyata */
   .keahlian-card-snap {
     scroll-snap-align: center;
     scroll-snap-stop: normal;
-    scroll-margin-top: 32px;
-    scroll-margin-bottom: 32px;
   }
 
   body {

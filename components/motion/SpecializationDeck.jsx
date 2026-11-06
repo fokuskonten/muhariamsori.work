@@ -74,7 +74,7 @@ export default function SpecializationDeck({ slides, id }) {
   return (
     <div
       id={id || "kontainer-keahlian-software"}
-      className="keahlian-card-snap rounded-3xl border border-neutral-200 bg-white p-4 sm:p-7 lg:p-10 shadow-[0_12px_36px_-6px_rgba(0,0,0,0.12)] hover:shadow-[0_24px_50px_-10px_rgba(0,0,0,0.22)] hover:border-neutral-900/40 transition-all duration-300 group select-none"
+      className="keahlian-card-snap rounded-3xl border border-neutral-200/90 bg-white p-4 sm:p-7 lg:p-10 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_-6px_rgba(0,0,0,0.12)] hover:border-neutral-900/40 transition-all duration-300 group select-none"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -99,7 +99,7 @@ export default function SpecializationDeck({ slides, id }) {
               >
                 {isPortrait ? (
                   /* ── TAMPILAN KHUSUS POTRET / VERTIKAL (RINGKAS: FULL MEDIA PAS BADAN + JUDUL BERBAYANG DI ATAS) ── */
-                  <div className="relative w-fit max-w-full mx-auto rounded-2xl overflow-hidden border border-neutral-800/80 bg-neutral-950 shadow-[0_8px_24px_-4px_rgba(0,0,0,0.35)] flex items-center justify-center min-h-[340px] sm:min-h-[460px] max-h-[520px] sm:max-h-[660px]">
+                  <div className="relative w-fit max-w-full mx-auto rounded-2xl overflow-hidden border border-neutral-800/80 bg-neutral-950 flex items-center justify-center min-h-[340px] sm:min-h-[460px] max-h-[520px] sm:max-h-[660px]">
                     {slide.youtubeId ? (
                       <div className="relative w-[280px] sm:w-[360px] max-w-full aspect-[9/16] max-h-[520px] sm:max-h-[660px] bg-black">
                         <iframe
@@ -147,7 +147,7 @@ export default function SpecializationDeck({ slides, id }) {
                   /* ── TAMPILAN STANDAR LANDSCAPE (MEDIA DI ATAS + JUDUL & DESKRIPSI DI BAWAH) ── */
                   <>
                     {/* 1. Visual Banner Lebar Penuh (Rasio Seragam Alami) */}
-                    <div className="relative w-full aspect-[16/9] max-h-[170px] sm:max-h-[300px] lg:max-h-[560px] rounded-2xl overflow-hidden border border-neutral-200/90 bg-neutral-100 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.12)] mb-3.5 sm:mb-6 flex items-center justify-center">
+                    <div className="relative w-full aspect-[16/9] max-h-[170px] sm:max-h-[300px] lg:max-h-[560px] rounded-2xl overflow-hidden border border-neutral-200/90 bg-neutral-100 mb-3.5 sm:mb-6 flex items-center justify-center">
                       {slide.youtubeId ? (
                         <div className="relative w-full h-full aspect-video bg-black rounded-2xl overflow-hidden">
                           <iframe
