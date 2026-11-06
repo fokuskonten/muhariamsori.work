@@ -65,7 +65,7 @@ export default function SpecializationDeck({ slides, id }) {
   return (
     <div
       id={id || "kontainer-keahlian-software"}
-      className="keahlian-card-snap rounded-3xl border border-neutral-200 bg-white p-6 sm:p-8 lg:p-10 shadow-[0_12px_36px_-6px_rgba(0,0,0,0.12)] hover:shadow-[0_24px_50px_-10px_rgba(0,0,0,0.22)] hover:border-neutral-900/40 transition-all duration-300 group select-none"
+      className="keahlian-card-snap rounded-3xl border border-neutral-200 bg-white p-4 sm:p-7 lg:p-10 shadow-[0_12px_36px_-6px_rgba(0,0,0,0.12)] hover:shadow-[0_24px_50px_-10px_rgba(0,0,0,0.22)] hover:border-neutral-900/40 transition-all duration-300 group select-none"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -90,9 +90,9 @@ export default function SpecializationDeck({ slides, id }) {
               >
                 {isPortrait ? (
                   /* ── TAMPILAN KHUSUS POTRET / VERTIKAL (RINGKAS: FULL MEDIA PAS BADAN + JUDUL BERBAYANG DI ATAS) ── */
-                  <div className="relative w-fit max-w-full mx-auto rounded-2xl overflow-hidden border border-neutral-800/80 bg-neutral-950 shadow-[0_8px_24px_-4px_rgba(0,0,0,0.35)] flex items-center justify-center min-h-[460px] max-h-[660px]">
+                  <div className="relative w-fit max-w-full mx-auto rounded-2xl overflow-hidden border border-neutral-800/80 bg-neutral-950 shadow-[0_8px_24px_-4px_rgba(0,0,0,0.35)] flex items-center justify-center min-h-[340px] sm:min-h-[460px] max-h-[520px] sm:max-h-[660px]">
                     {slide.youtubeId ? (
-                      <div className="relative w-[320px] sm:w-[360px] max-w-full aspect-[9/16] max-h-[660px] bg-black">
+                      <div className="relative w-[280px] sm:w-[360px] max-w-full aspect-[9/16] max-h-[520px] sm:max-h-[660px] bg-black">
                         <iframe
                           src={`https://www.youtube.com/embed/${slide.youtubeId}?rel=0`}
                           title={slide.title}
@@ -110,7 +110,7 @@ export default function SpecializationDeck({ slides, id }) {
                         controls
                         playsInline
                         preload="metadata"
-                        className="w-auto h-auto max-h-[660px] max-w-full object-contain mx-auto block"
+                        className="w-auto h-auto max-h-[520px] sm:max-h-[660px] max-w-full object-contain mx-auto block"
                         onLoadedMetadata={() => {
                           if (idx === active) updateHeight()
                         }}
@@ -119,7 +119,7 @@ export default function SpecializationDeck({ slides, id }) {
                       <img
                         src={slide.banner}
                         alt={slide.title}
-                        className="w-auto h-auto max-h-[660px] max-w-full object-contain mx-auto block select-none pointer-events-none"
+                        className="w-auto h-auto max-h-[520px] sm:max-h-[660px] max-w-full object-contain mx-auto block select-none pointer-events-none"
                         loading={idx === 0 ? 'eager' : 'lazy'}
                         onLoad={() => {
                           if (idx === active) updateHeight()
@@ -128,8 +128,8 @@ export default function SpecializationDeck({ slides, id }) {
                     ) : null}
 
                     {/* Label Judul Tebal Berbayang di Bagian Atas (Mencegah Bentrok dengan Kontrol Video di Bawah) */}
-                    <div className="absolute top-0 inset-x-0 bg-gradient-to-b from-black/85 via-black/40 to-transparent pt-4 pb-10 px-5 sm:px-6 pointer-events-none z-10 flex flex-col items-center text-center">
-                      <h3 className="font-display font-extrabold text-lg sm:text-xl md:text-2xl text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] leading-snug">
+                    <div className="absolute top-0 inset-x-0 bg-gradient-to-b from-black/85 via-black/40 to-transparent pt-3 pb-8 px-4 sm:pt-4 sm:pb-10 sm:px-6 pointer-events-none z-10 flex flex-col items-center text-center">
+                      <h3 className="font-display font-extrabold text-base sm:text-xl md:text-2xl text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] leading-snug">
                         {slide.title}
                       </h3>
                     </div>
@@ -138,9 +138,9 @@ export default function SpecializationDeck({ slides, id }) {
                   /* ── TAMPILAN STANDAR LANDSCAPE (MEDIA DI ATAS + JUDUL & DESKRIPSI DI BAWAH) ── */
                   <>
                     {/* 1. Visual Banner Lebar Penuh (Rasio Seragam Alami) */}
-                    <div className="relative w-full rounded-2xl overflow-hidden border border-neutral-200/90 bg-neutral-100 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.12)] mb-5 sm:mb-8 flex items-center justify-center">
+                    <div className="relative w-full rounded-2xl overflow-hidden border border-neutral-200/90 bg-neutral-100 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.12)] mb-3.5 sm:mb-6 flex items-center justify-center">
                       {slide.youtubeId ? (
-                        <div className="relative w-full aspect-video max-h-[560px] sm:max-h-[640px] bg-black rounded-2xl overflow-hidden">
+                        <div className="relative w-full aspect-video max-h-[170px] sm:max-h-[300px] lg:max-h-[560px] bg-black rounded-2xl overflow-hidden">
                           <iframe
                             src={`https://www.youtube.com/embed/${slide.youtubeId}?rel=0`}
                             title={slide.title}
@@ -158,7 +158,7 @@ export default function SpecializationDeck({ slides, id }) {
                           controls
                           playsInline
                           preload="metadata"
-                          className="w-full h-auto max-h-[560px] sm:max-h-[640px] object-contain block bg-black/5"
+                          className="w-full h-auto max-h-[170px] sm:max-h-[300px] lg:max-h-[560px] object-contain block bg-black/5"
                           onLoadedMetadata={() => {
                             if (idx === active) updateHeight()
                           }}
@@ -167,15 +167,15 @@ export default function SpecializationDeck({ slides, id }) {
                         <img
                           src={slide.banner}
                           alt={slide.title}
-                          className="w-full h-auto max-h-[560px] sm:max-h-[640px] object-contain block select-none pointer-events-none"
+                          className="w-full h-auto max-h-[170px] sm:max-h-[300px] lg:max-h-[560px] object-contain block select-none pointer-events-none"
                           loading={idx === 0 ? 'eager' : 'lazy'}
                           onLoad={() => {
                             if (idx === active) updateHeight()
                           }}
                         />
                       ) : (
-                        <div className="aspect-[16/9] w-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-200/50">
-                          <span className="font-display font-bold text-sm sm:text-base text-neutral-800">
+                        <div className="aspect-[16/9] w-full flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-200/50">
+                          <span className="font-display font-bold text-xs sm:text-base text-neutral-800">
                             {slide.title}
                           </span>
                         </div>
@@ -183,21 +183,21 @@ export default function SpecializationDeck({ slides, id }) {
                     </div>
 
                     {/* 2. Informasi & Rincian Fitur */}
-                    <div className="space-y-5 sm:space-y-6">
-                      <h3 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-neutral-950 leading-tight">
+                    <div className="space-y-3 sm:space-y-5">
+                      <h3 className="font-display font-extrabold text-lg sm:text-2xl lg:text-3xl text-neutral-950 leading-snug">
                         {slide.title}
                       </h3>
 
-                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-10 items-start">
-                        <p className={`${slide.features && slide.features.length > 0 ? 'lg:col-span-6' : 'lg:col-span-12'} text-neutral-600 text-sm sm:text-base leading-relaxed`}>
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-8 items-start">
+                        <p className={`${slide.features && slide.features.length > 0 ? 'lg:col-span-6' : 'lg:col-span-12'} text-neutral-600 text-xs sm:text-sm leading-relaxed`}>
                           {slide.desc}
                         </p>
                         {slide.features && slide.features.length > 0 && (
-                          <div className="lg:col-span-6 space-y-2.5">
+                          <div className="lg:col-span-6 space-y-1.5 sm:space-y-2.5">
                             {slide.features.map((feat, fIdx) => (
-                              <div key={fIdx} className="flex items-start gap-3 text-xs sm:text-sm text-neutral-800">
-                                <span className="w-5 h-5 min-w-[20px] min-h-[20px] max-w-[20px] max-h-[20px] rounded-md bg-neutral-900 text-white inline-flex items-center justify-center shrink-0 mt-0.5">
-                                  <svg className="w-3.5 h-3.5 shrink-0" width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+                              <div key={fIdx} className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-neutral-800">
+                                <span className="w-4 h-4 min-w-[16px] min-h-[16px] max-w-[16px] max-h-[16px] sm:w-5 sm:h-5 sm:min-w-[20px] sm:min-h-[20px] sm:max-w-[20px] sm:max-h-[20px] rounded-md bg-neutral-900 text-white inline-flex items-center justify-center shrink-0 mt-0.5">
+                                  <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
                                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                   </svg>
                                 </span>
@@ -210,9 +210,9 @@ export default function SpecializationDeck({ slides, id }) {
 
                       {/* 3. CTA Buttons / Validasi Status Pengembangan */}
                       {(slide.statusBadge || slide.ctaButtons || slide.ctaLink) && (
-                        <div className="pt-4 sm:pt-6 border-t border-neutral-100 flex flex-wrap items-center justify-end gap-2">
+                        <div className="pt-3 sm:pt-5 border-t border-neutral-100 flex flex-wrap items-center justify-end gap-2">
                           {slide.statusBadge ? (
-                            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-neutral-100 border border-neutral-200 text-neutral-700 text-xs sm:text-sm font-display font-medium select-none shadow-sm">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-neutral-100 border border-neutral-200 text-neutral-700 text-xs sm:text-sm font-display font-medium select-none shadow-sm">
                               <span className="w-2 h-2 rounded-full bg-amber-500 motion-safe:animate-pulse shrink-0" />
                               <span>{slide.statusBadge}</span>
                             </div>
@@ -223,7 +223,7 @@ export default function SpecializationDeck({ slides, id }) {
                                 href={btn.href}
                                 target={btn.href.startsWith('http') ? '_blank' : undefined}
                                 rel={btn.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-xl text-xs sm:text-sm font-display font-bold transition-all shadow-sm ${
+                                className={`inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-2.5 sm:px-6 sm:py-3 rounded-xl text-xs sm:text-sm font-display font-bold transition-all shadow-sm ${
                                   btn.primary
                                     ? 'bg-neutral-950 text-white hover:bg-neutral-800'
                                     : 'bg-neutral-100 border border-neutral-200/80 text-neutral-900 hover:bg-neutral-200'
@@ -238,7 +238,7 @@ export default function SpecializationDeck({ slides, id }) {
                               href={slide.ctaLink}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-xl bg-neutral-950 text-white text-xs sm:text-sm font-display font-bold hover:bg-neutral-800 transition-all group/cta shadow-sm"
+                              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-neutral-950 text-white text-xs sm:text-sm font-display font-bold hover:bg-neutral-800 transition-all group/cta shadow-sm"
                             >
                               <span>{slide.ctaText || 'Buka Website'}</span>
                               <span className="group-hover/cta:translate-x-1 transition-transform font-mono">&rarr;</span>
@@ -246,7 +246,7 @@ export default function SpecializationDeck({ slides, id }) {
                           ) : (
                             <Link
                               href={slide.ctaLink}
-                              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-xl bg-neutral-950 text-white text-xs sm:text-sm font-display font-bold hover:bg-neutral-800 transition-all group/cta shadow-sm"
+                              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-neutral-950 text-white text-xs sm:text-sm font-display font-bold hover:bg-neutral-800 transition-all group/cta shadow-sm"
                             >
                               <span>{slide.ctaText || 'Buka Portofolio'}</span>
                               <span className="group-hover/cta:translate-x-1 transition-transform font-mono">&rarr;</span>
@@ -264,13 +264,13 @@ export default function SpecializationDeck({ slides, id }) {
       </div>
 
       {/* ── 4. NAVIGASI: BACK / NEXT + TITIK INDIKATOR ── */}
-      <div className="mt-6 pt-5 border-t border-neutral-100 flex flex-wrap sm:flex-nowrap items-center justify-between gap-4">
+      <div className="mt-3.5 sm:mt-6 pt-3 sm:pt-5 border-t border-neutral-100 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3">
         <div className="flex items-center gap-2 shrink-0">
           {active > 0 && (
             <button
               type="button"
               onClick={prev}
-              className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-neutral-100 hover:bg-neutral-200 text-neutral-800 text-xs sm:text-sm font-display font-bold transition-all border border-neutral-200/80 active:scale-95"
+              className="inline-flex items-center justify-center gap-1.5 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-neutral-100 hover:bg-neutral-200 text-neutral-800 text-xs sm:text-sm font-display font-bold transition-all border border-neutral-200/80 active:scale-95"
             >
               <span className="font-mono">&larr;</span>
               <span>Back</span>
@@ -279,7 +279,7 @@ export default function SpecializationDeck({ slides, id }) {
           <button
             type="button"
             onClick={next}
-            className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white text-xs sm:text-sm font-display font-bold transition-all shadow-sm active:scale-95 group/btn"
+            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white text-xs sm:text-sm font-display font-bold transition-all shadow-sm active:scale-95 group/btn"
           >
             <span>{total > 1 && active === total - 1 ? 'Awal ↺' : 'Next'}</span>
             {(total === 1 || active !== total - 1) && (

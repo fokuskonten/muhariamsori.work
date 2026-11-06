@@ -1367,10 +1367,10 @@ export default function HomePage() {
       </section>
 
       {/* ── 02. KEAHLIAN YANG SAYA KERJAKAN (DECK IMPLEMENTASI SOFTWARE & DAFTAR KEAHLIAN LENGKAP) ── */}
-      <section id="keahlian" className="py-20 sm:py-28 bg-white border-b border-neutral-200/80">
+      <section id="keahlian" className="py-12 sm:py-24 bg-white border-b border-neutral-200/80">
         <div className="container-page max-w-6xl mx-auto px-4 sm:px-6">
           
-          <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20" data-reveal>
+          <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-16" data-reveal>
             <h2 className="heading-xl text-3xl sm:text-4xl lg:text-5xl text-neutral-950 mb-3 tracking-tight">
               Keahlian yang Saya Kerjakan
             </h2>
@@ -1380,7 +1380,7 @@ export default function HomePage() {
           </div>
 
           {/* DAFTAR PER-SEKAT MANDIRI */}
-          <div className="space-y-16 sm:space-y-20 lg:space-y-24">
+          <div className="space-y-8 sm:space-y-16 lg:space-y-20">
             
             {/* KARTU 01: PANGGUNG DECK INTERAKTIF KHUSUS KONTEN IMPLEMENTASI SOFTWARE */}
             <div data-reveal data-spotlight id="keahlian-software">
@@ -1523,29 +1523,31 @@ export default function HomePage() {
       </section>
 
       {/* ── 04. BERKAS DOKUMEN RESMI SAYA ────────────────────────────────── */}
-      <section id="berkas" className="py-20 bg-white">
+      <section id="berkas" className="py-14 sm:py-20 bg-white">
         <div className="container-page max-w-4xl mx-auto px-4 sm:px-6">
           <div
             data-reveal
             data-spotlight
-            className="p-8 sm:p-12 rounded-3xl bg-neutral-950 text-white border border-neutral-800 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.35)] hover:shadow-[0_28px_60px_-10px_rgba(0,0,0,0.5)] hover:border-neutral-700 transition-all duration-300 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left group"
+            className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-neutral-950 text-white border border-neutral-800 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.35)] hover:shadow-[0_28px_60px_-10px_rgba(0,0,0,0.5)] hover:border-neutral-700 transition-all duration-300 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left group"
           >
-            <div className="space-y-1.5">
+            <div className="space-y-2">
               <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
-                Berkas Lamaran Asli Sudah Lengkap
+                Berkas Lamaran Asli Lengkap &amp; Siap Ditunjukkan
               </h3>
-              <p className="text-xs sm:text-sm text-neutral-300 max-w-md leading-relaxed">
-                KTP Asli, Kartu Keluarga, Ijazah Asli MA Attaqwa (IPS), NPWP, SIM C, Paklaring Kerja dari pabrik, dan Sertifikat pelatihan Solidworks sudah siap ditunjukkan.
+              <p className="text-xs sm:text-sm text-neutral-300 max-w-lg leading-relaxed">
+                KTP Asli, Kartu Keluarga, Ijazah Asli MA Attaqwa (IPS), NPWP, SIM C, Paklaring Kerja dari pabrik, dan Sertifikat pelatihan SolidWorks sudah siap ditunjukkan langsung atau dikirimkan via email untuk keperluan verifikasi resmi.
               </p>
+              <div className="text-[11px] font-mono text-neutral-400 pt-1">
+                * Demi privasi &amp; perlindungan NIK, berkas asli lengkap hanya diserahkan secara privat (*on-request*).
+              </div>
             </div>
-            <div className="shrink-0">
+            <div className="shrink-0 w-full sm:w-auto">
               <a
-                href="/cv/CV_DAN_BERKAS_LENGKAP_MUHARI.pdf"
-                download="Berkas_Lengkap_Muhari_Amsori.pdf"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-neutral-950 font-display font-bold text-xs sm:text-sm hover:bg-neutral-100 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md group/btn"
+                href="mailto:muhariamsori@gmail.com?subject=Permintaan%20Berkas%20Resmi%20Muhari%20Amsori"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white text-neutral-950 font-display font-bold text-xs sm:text-sm hover:bg-neutral-100 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md group/btn"
               >
-                <span>Unduh Berkas Lengkap (PDF)</span>
-                <span className="font-mono text-xs text-neutral-500 group-hover/btn:translate-y-0.5 transition-transform">&darr;</span>
+                <span>Minta Berkas Resmi (Email)</span>
+                <span className="font-mono text-xs text-neutral-500 group-hover/btn:translate-x-0.5 transition-transform">&rarr;</span>
               </a>
             </div>
           </div>

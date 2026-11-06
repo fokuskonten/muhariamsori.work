@@ -61,15 +61,14 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Tombol Aksi CV Tunggal */}
+        {/* Tombol Aksi Kontak Cepat */}
         <div className="hidden sm:flex items-center gap-3">
           <a
-            href="/cv/CV_MUHARI_LEMBAR_TUNGGAL.pdf"
-            download="CV_Muhari_Amsori.pdf"
+            href="/#kontak"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-neutral-950 text-white font-display font-bold text-xs hover:bg-neutral-800 transition-all shadow-sm"
           >
-            <span>Unduh CV (PDF)</span>
-            <span className="font-mono text-[10px] text-neutral-400">&darr;</span>
+            <span>Hubungi Saya</span>
+            <span className="font-mono text-xs text-neutral-400">&rarr;</span>
           </a>
         </div>
 
@@ -104,11 +103,11 @@ export default function Navbar() {
           ))}
           <div className="pt-3">
             <a
-              href="/cv/CV_MUHARI_LEMBAR_TUNGGAL.pdf"
-              download="CV_Muhari_Amsori.pdf"
+              href="/#kontak"
+              onClick={() => setMobileMenuOpen(false)}
               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-neutral-950 text-white font-display font-bold text-xs shadow-sm"
             >
-              <span>Unduh CV Format ATS (PDF)</span>
+              <span>Hubungi Saya Langsung &rarr;</span>
             </a>
           </div>
         </div>

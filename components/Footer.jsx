@@ -81,11 +81,10 @@ export default function Footer() {
               </li>
               <li className="pt-2">
                 <a
-                  href="/cv/CV_MUHARI_LEMBAR_TUNGGAL.pdf"
-                  download="CV_Muhari_Amsori.pdf"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-950 underline underline-offset-4"
+                  href="mailto:muhariamsori@gmail.com?subject=Permintaan%20Berkas%20Resmi%20Muhari%20Amsori"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-950 hover:underline underline-offset-4"
                 >
-                  <span>Unduh CV Saya (PDF) &rarr;</span>
+                  <span>Minta Berkas Resmi (Email) &rarr;</span>
                 </a>
               </li>
             </ul>
