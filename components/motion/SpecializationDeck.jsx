@@ -6,6 +6,7 @@ import Link from 'next/link'
 export default function SpecializationDeck({ slides, id }) {
   const [active, setActive] = useState(0)
   const [activeHeight, setActiveHeight] = useState(null)
+  const [loadedBanners, setLoadedBanners] = useState({})
   const slideRefs = useRef([])
   const videoRefs = useRef([])
   const touchStartX = useRef(0)
@@ -24,6 +25,20 @@ export default function SpecializationDeck({ slides, id }) {
       }
     })
   }, [active])
+
+  // Pra-muat seluruh berkas banner slide di latar belakang ke memori peramban secara senyap
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const timer = setTimeout(() => {
+      slides.forEach((s) => {
+        if (s.banner) {
+          const img = new window.Image()
+          img.src = s.banner
+        }
+      })
+    }, 250)
+    return () => clearTimeout(timer)
+  }, [slides])
 
   const updateHeight = useCallback(() => {
     const el = slideRefs.current[active]
@@ -114,11 +129,11 @@ export default function SpecializationDeck({ slides, id }) {
                     ) : slide.video ? (
                       <video
                         ref={(el) => (videoRefs.current[idx] = el)}
-                        src={slide.video}
+                        src={idx === active ? slide.video : undefined}
                         poster={slide.banner}
                         controls
                         playsInline
-                        preload="metadata"
+                        preload="none"
                         className="w-auto h-auto max-h-[520px] sm:max-h-[660px] max-w-full object-contain mx-auto block"
                         onLoadedMetadata={() => {
                           if (idx === active) updateHeight()
@@ -147,7 +162,13 @@ export default function SpecializationDeck({ slides, id }) {
                   /* ── TAMPILAN STANDAR LANDSCAPE (MEDIA DI ATAS + JUDUL & DESKRIPSI DI BAWAH) ── */
                   <>
                     {/* 1. Visual Banner Smart Size Alami (Bebas Frame Abu-Abu, Bebas Pemaksaan Rasio 16:9, Memeluk Dimensi Media Asli) */}
-                    <div className="relative w-fit max-w-full mx-auto rounded-2xl overflow-hidden border border-neutral-200/90 mb-3.5 sm:mb-6 flex items-center justify-center">
+                    <div
+                      className={`relative ${
+                        slide.youtubeId || slide.video || loadedBanners[idx]
+                          ? 'w-fit'
+                          : 'w-full min-h-[150px] sm:min-h-[220px] bg-neutral-100 animate-pulse'
+                      } max-w-full mx-auto rounded-2xl overflow-hidden border border-neutral-200/90 mb-3.5 sm:mb-6 flex items-center justify-center transition-all duration-200`}
+                    >
                       {slide.youtubeId ? (
                         <div className="relative w-full aspect-video min-w-[280px] sm:min-w-[480px] max-h-[220px] sm:max-h-[340px] lg:max-h-[560px] bg-black rounded-2xl overflow-hidden">
                           <iframe
@@ -162,11 +183,11 @@ export default function SpecializationDeck({ slides, id }) {
                       ) : slide.video ? (
                         <video
                           ref={(el) => (videoRefs.current[idx] = el)}
-                          src={slide.video}
+                          src={idx === active ? slide.video : undefined}
                           poster={slide.banner}
                           controls
                           playsInline
-                          preload="metadata"
+                          preload="none"
                           className="w-auto h-auto max-h-[220px] sm:max-h-[340px] lg:max-h-[560px] max-w-full object-contain block"
                           onLoadedMetadata={() => {
                             if (idx === active) updateHeight()
@@ -174,11 +195,17 @@ export default function SpecializationDeck({ slides, id }) {
                         />
                       ) : slide.banner ? (
                         <img
+                          ref={(imgEl) => {
+                            if (imgEl && imgEl.complete && !loadedBanners[idx]) {
+                              setLoadedBanners((prev) => ({ ...prev, [idx]: true }))
+                            }
+                          }}
                           src={slide.banner}
                           alt={slide.title}
                           className="w-auto h-auto max-h-[220px] sm:max-h-[340px] lg:max-h-[560px] max-w-full object-contain block select-none pointer-events-none"
                           loading={Math.abs(idx - active) <= 2 ? 'eager' : 'lazy'}
                           onLoad={() => {
+                            setLoadedBanners((prev) => ({ ...prev, [idx]: true }))
                             if (idx === active) updateHeight()
                           }}
                         />
