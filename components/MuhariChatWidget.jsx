@@ -283,7 +283,7 @@ export default function MuhariChatWidget() {
           <div className="flex items-center gap-2.5">
             <div className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-emerald-400 shadow-soft shrink-0">
               <img
-                src="/brand/muhari-profile.jpg"
+                src="/brand/muhari-chat-avatar.jpg"
                 alt="Muhari Amsori"
                 className="w-full h-full object-cover object-[45%_25%]"
               />

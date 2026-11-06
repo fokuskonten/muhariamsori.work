@@ -35,7 +35,7 @@ export default function Navbar() {
             <img
               src="/brand/muhari-profile.jpg"
               alt="Muhari Amsori"
-              className="w-full h-full object-cover object-[45%_25%]"
+              className="w-full h-full object-cover"
             />
           </div>
           <div>
