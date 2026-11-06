@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import BackToTop from '@/components/BackToTop'
 import MotionProvider from '@/components/motion/MotionProvider'
+import MuhariChatWidget from '@/components/MuhariChatWidget'
 
 export const metadata = {
   title: 'Muhari Amsori — Portofolio & Profil Profesional',
@@ -52,6 +53,7 @@ export default function RootLayout({ children }) {
         </main>
         <Footer />
         <BackToTop />
+        <MuhariChatWidget />
       </body>
     </html>
   )
