@@ -252,44 +252,36 @@ export default function MuhariChatWidget() {
 
   return (
     <>
-      {/* Tombol Mengambang (Floating Action Button Pill Monokrom Enterprise Sesuai STANDAR_UI_WEB_OFFICIAL.md) */}
+      {/* Floating Button Asisten Muhari — Ukuran Proporsional 48px Identik FokusKonten */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-20 lg:bottom-8 right-4 lg:right-8 z-50 h-12 sm:h-14 px-4 sm:px-5 rounded-full bg-neutral-950 hover:bg-neutral-900 text-white shadow-2xl shadow-neutral-950/40 hover:shadow-neutral-950/60 flex items-center gap-2.5 sm:gap-3 transition-all duration-200 hover:scale-[1.02] border border-neutral-800 cursor-pointer group ${
+        className={`fixed bottom-20 lg:bottom-12 right-4 lg:right-8 z-50 w-12 h-12 rounded-full bg-neutral-950 text-white shadow-lg shadow-black/35 hover:shadow-2xl hover:shadow-black/50 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1 border border-neutral-800 cursor-pointer ${
           isOpen ? 'scale-0 opacity-0 pointer-events-none' : 'scale-100 opacity-100'
         }`}
         aria-label="Tanya Asisten Profil Muhari Amsori"
-        title="Chat Asisten Profil Muhari Amsori"
+        title="Chat Asisten Profil Resmi"
       >
-        <div className="relative flex items-center justify-center shrink-0">
-          <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="relative flex items-center justify-center">
+          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
           </svg>
-          <span className="absolute -top-0.5 -right-0.5 flex h-2 w-2">
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
+          <span className="absolute -top-1 -right-1 flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-neutral-950" />
           </span>
-        </div>
-        <div className="text-left flex flex-col justify-center">
-          <div className="text-xs sm:text-sm font-display font-bold text-white flex items-center gap-1.5 leading-none">
-            <span>Tanya Profil Muhari</span>
-            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-200 border border-neutral-700">AI</span>
-          </div>
-          <div className="text-[10px] text-neutral-400 hidden sm:block mt-0.5 leading-none font-mono">
-            Asisten Portofolio Resmi
-          </div>
         </div>
       </button>
 
-      {/* Jendela Chat Monokrom Bersih Sesuai STANDAR_UI_WEB_OFFICIAL.md */}
+      {/* Jendela Chat Ringkas Sesuai FokusKonten & STANDAR_UI_WEB_OFFICIAL.md */}
       <div
-        className={`fixed bottom-4 sm:bottom-6 lg:bottom-8 right-4 lg:right-8 z-50 w-[320px] sm:w-[360px] max-w-[calc(100vw-1.5rem)] h-[500px] sm:h-[540px] max-h-[calc(100vh-3rem)] bg-white rounded-2xl shadow-2xl border border-neutral-300 flex flex-col transition-all duration-200 origin-bottom-right font-sans overflow-hidden ${
+        className={`fixed bottom-20 lg:bottom-12 right-4 lg:right-8 z-50 w-[315px] sm:w-[345px] max-w-[calc(100vw-1.5rem)] h-[440px] sm:h-[480px] max-h-[calc(100vh-5rem)] bg-white rounded-2xl shadow-2xl border border-neutral-200 flex flex-col transition-all duration-300 origin-bottom-right font-sans overflow-hidden ${
           isOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'
         }`}
       >
-        {/* Header Widget Monokrom Tegas */}
+        {/* Header Widget Ringkas Identik FokusKonten */}
         <div className="bg-neutral-950 px-4 py-3 flex items-center justify-between border-b border-neutral-800">
           <div className="flex items-center gap-2.5">
-            <div className="relative w-9 h-9 rounded-xl overflow-hidden border border-neutral-700 shrink-0 bg-neutral-900">
+            <div className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-emerald-400 shadow-soft shrink-0">
               <img
                 src="/brand/muhari-profile.jpg"
                 alt="Muhari Amsori"
@@ -301,9 +293,9 @@ export default function MuhariChatWidget() {
                 <h3 className="text-white font-display font-bold text-sm tracking-tight">Muhari Amsori</h3>
                 <span className="text-[10px] bg-neutral-800 text-neutral-200 px-1.5 py-0.5 rounded font-mono font-bold border border-neutral-700">AI</span>
               </div>
-              <p className="text-neutral-400 text-[11px] font-mono flex items-center gap-1.5 mt-0.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-white" />
-                Asisten Portofolio • Siaga
+              <p className="text-emerald-400 text-[11px] font-medium flex items-center gap-1 mt-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Online • Asisten Digital
               </p>
             </div>
           </div>
