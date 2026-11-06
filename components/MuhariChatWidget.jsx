@@ -291,8 +291,12 @@ export default function MuhariChatWidget() {
         {/* Header Widget */}
         <div className="bg-neutral-950 px-4 py-3 flex items-center justify-between border-b border-neutral-800">
           <div className="flex items-center gap-2.5">
-            <div className="relative w-8 h-8 rounded-full bg-neutral-800 border border-emerald-400 flex items-center justify-center text-white text-xs font-bold shrink-0">
-              MA
+            <div className="relative w-8 h-8 rounded-full overflow-hidden border border-emerald-400 shrink-0 bg-neutral-800">
+              <img
+                src="/brand/muhari-profile.jpg"
+                alt="Muhari Amsori"
+                className="w-full h-full object-cover object-[45%_25%]"
+              />
               <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-400 border border-neutral-950" />
             </div>
             <div>
