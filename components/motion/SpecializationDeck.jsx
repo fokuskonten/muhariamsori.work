@@ -35,9 +35,18 @@ export default function SpecializationDeck({ slides, id }) {
 
   useEffect(() => {
     updateHeight()
+    const el = slideRefs.current[active]
+    if (!el) return
+    const observer = new ResizeObserver(() => {
+      updateHeight()
+    })
+    observer.observe(el)
     window.addEventListener('resize', updateHeight)
-    return () => window.removeEventListener('resize', updateHeight)
-  }, [updateHeight])
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('resize', updateHeight)
+    }
+  }, [active, updateHeight])
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -138,9 +147,9 @@ export default function SpecializationDeck({ slides, id }) {
                   /* ── TAMPILAN STANDAR LANDSCAPE (MEDIA DI ATAS + JUDUL & DESKRIPSI DI BAWAH) ── */
                   <>
                     {/* 1. Visual Banner Lebar Penuh (Rasio Seragam Alami) */}
-                    <div className="relative w-full rounded-2xl overflow-hidden border border-neutral-200/90 bg-neutral-100 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.12)] mb-3.5 sm:mb-6 flex items-center justify-center">
+                    <div className="relative w-full aspect-[16/9] max-h-[170px] sm:max-h-[300px] lg:max-h-[560px] rounded-2xl overflow-hidden border border-neutral-200/90 bg-neutral-100 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.12)] mb-3.5 sm:mb-6 flex items-center justify-center">
                       {slide.youtubeId ? (
-                        <div className="relative w-full aspect-video max-h-[170px] sm:max-h-[300px] lg:max-h-[560px] bg-black rounded-2xl overflow-hidden">
+                        <div className="relative w-full h-full aspect-video bg-black rounded-2xl overflow-hidden">
                           <iframe
                             src={`https://www.youtube.com/embed/${slide.youtubeId}?rel=0`}
                             title={slide.title}
@@ -158,7 +167,7 @@ export default function SpecializationDeck({ slides, id }) {
                           controls
                           playsInline
                           preload="metadata"
-                          className="w-full h-auto max-h-[170px] sm:max-h-[300px] lg:max-h-[560px] object-contain block bg-black/5"
+                          className="w-full h-full object-contain block bg-black/5"
                           onLoadedMetadata={() => {
                             if (idx === active) updateHeight()
                           }}
@@ -167,8 +176,8 @@ export default function SpecializationDeck({ slides, id }) {
                         <img
                           src={slide.banner}
                           alt={slide.title}
-                          className="w-full h-auto max-h-[170px] sm:max-h-[300px] lg:max-h-[560px] object-contain block select-none pointer-events-none"
-                          loading={idx === 0 ? 'eager' : 'lazy'}
+                          className="w-full h-full object-contain block select-none pointer-events-none"
+                          loading={Math.abs(idx - active) <= 2 ? 'eager' : 'lazy'}
                           onLoad={() => {
                             if (idx === active) updateHeight()
                           }}

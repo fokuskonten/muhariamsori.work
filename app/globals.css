@@ -10,23 +10,12 @@
     scroll-snap-type: y proximity;
   }
 
-  /* Snap khusus kontainer keahlian: Adaptif Layar Ponsel vs Desktop */
-  @media (max-width: 767px) {
-    .keahlian-card-snap {
-      scroll-snap-align: start;
-      scroll-snap-stop: normal;
-      scroll-margin-top: 76px;
-      scroll-margin-bottom: 16px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .keahlian-card-snap {
-      scroll-snap-align: center;
-      scroll-snap-stop: normal;
-      scroll-margin-top: 80px;
-      scroll-margin-bottom: 24px;
-    }
+  /* Snap khusus kontainer keahlian: Mengunci posisi presisi di dead-center layar ponsel & desktop (Smart Scroll) */
+  .keahlian-card-snap {
+    scroll-snap-align: center;
+    scroll-snap-stop: normal;
+    scroll-margin-top: 32px;
+    scroll-margin-bottom: 32px;
   }
 
   body {
