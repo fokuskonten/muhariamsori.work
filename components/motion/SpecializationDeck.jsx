@@ -129,7 +129,7 @@ export default function SpecializationDeck({ slides, id }) {
                         src={slide.banner}
                         alt={slide.title}
                         className="w-auto h-auto max-h-[520px] sm:max-h-[660px] max-w-full object-contain mx-auto block select-none pointer-events-none"
-                        loading={idx === 0 ? 'eager' : 'lazy'}
+                        loading={Math.abs(idx - active) <= 2 ? 'eager' : 'lazy'}
                         onLoad={() => {
                           if (idx === active) updateHeight()
                         }}
@@ -146,10 +146,10 @@ export default function SpecializationDeck({ slides, id }) {
                 ) : (
                   /* ── TAMPILAN STANDAR LANDSCAPE (MEDIA DI ATAS + JUDUL & DESKRIPSI DI BAWAH) ── */
                   <>
-                    {/* 1. Visual Banner Lebar Penuh (Rasio Seragam Alami) */}
-                    <div className="relative w-full aspect-[16/9] max-h-[170px] sm:max-h-[300px] lg:max-h-[560px] rounded-2xl overflow-hidden border border-neutral-200/90 bg-neutral-100 mb-3.5 sm:mb-6 flex items-center justify-center">
+                    {/* 1. Visual Banner Smart Size Alami (Bebas Frame Abu-Abu, Bebas Pemaksaan Rasio 16:9, Memeluk Dimensi Media Asli) */}
+                    <div className="relative w-fit max-w-full mx-auto rounded-2xl overflow-hidden border border-neutral-200/90 mb-3.5 sm:mb-6 flex items-center justify-center">
                       {slide.youtubeId ? (
-                        <div className="relative w-full h-full aspect-video bg-black rounded-2xl overflow-hidden">
+                        <div className="relative w-full aspect-video min-w-[280px] sm:min-w-[480px] max-h-[220px] sm:max-h-[340px] lg:max-h-[560px] bg-black rounded-2xl overflow-hidden">
                           <iframe
                             src={`https://www.youtube.com/embed/${slide.youtubeId}?rel=0`}
                             title={slide.title}
@@ -167,7 +167,7 @@ export default function SpecializationDeck({ slides, id }) {
                           controls
                           playsInline
                           preload="metadata"
-                          className="w-full h-full object-contain block bg-black/5"
+                          className="w-auto h-auto max-h-[220px] sm:max-h-[340px] lg:max-h-[560px] max-w-full object-contain block"
                           onLoadedMetadata={() => {
                             if (idx === active) updateHeight()
                           }}
@@ -176,14 +176,14 @@ export default function SpecializationDeck({ slides, id }) {
                         <img
                           src={slide.banner}
                           alt={slide.title}
-                          className="w-full h-full object-contain block select-none pointer-events-none"
+                          className="w-auto h-auto max-h-[220px] sm:max-h-[340px] lg:max-h-[560px] max-w-full object-contain block select-none pointer-events-none"
                           loading={Math.abs(idx - active) <= 2 ? 'eager' : 'lazy'}
                           onLoad={() => {
                             if (idx === active) updateHeight()
                           }}
                         />
                       ) : (
-                        <div className="aspect-[16/9] w-full flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-200/50">
+                        <div className="w-full flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-200/50 min-h-[140px] rounded-2xl">
                           <span className="font-display font-bold text-xs sm:text-base text-neutral-800">
                             {slide.title}
                           </span>
