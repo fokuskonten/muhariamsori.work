@@ -253,29 +253,38 @@ export default function MuhariChatWidget() {
 
   return (
     <>
-      {/* Tombol Mengambang (Floating Action Button) */}
+      {/* Tombol Mengambang (Floating Action Button Pill yang Menonjol & Jelas) */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-20 lg:bottom-8 right-4 lg:right-8 z-50 w-13 h-13 rounded-full bg-neutral-950 text-white shadow-xl shadow-black/30 hover:shadow-2xl hover:shadow-black/50 flex items-center justify-center transition-all duration-300 hover:scale-105 border border-neutral-800 cursor-pointer ${
+        className={`fixed bottom-20 lg:bottom-8 right-4 lg:right-8 z-50 h-12 sm:h-14 px-4 sm:px-5 rounded-full bg-neutral-950 hover:bg-neutral-900 text-white shadow-2xl shadow-neutral-950/40 hover:shadow-neutral-950/60 flex items-center gap-2.5 sm:gap-3 transition-all duration-300 hover:scale-105 border border-neutral-700 cursor-pointer group ${
           isOpen ? 'scale-0 opacity-0 pointer-events-none' : 'scale-100 opacity-100'
         }`}
         aria-label="Tanya Asisten AI Muhari Amsori"
         title="Chat Asisten AI Muhari Amsori"
       >
-        <div className="relative flex items-center justify-center">
-          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="relative flex items-center justify-center shrink-0">
+          <svg className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
           </svg>
-          <span className="absolute -top-1 -right-1 flex h-3 w-3">
+          <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5 sm:h-3 sm:w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-neutral-950" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-emerald-500 border-2 border-neutral-950" />
           </span>
+        </div>
+        <div className="text-left flex flex-col justify-center">
+          <div className="text-xs sm:text-sm font-display font-bold text-white flex items-center gap-1.5 leading-none">
+            <span>Tanya AI Muhari</span>
+            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Gemini</span>
+          </div>
+          <div className="text-[10px] text-neutral-400 hidden sm:block mt-0.5 leading-none">
+            Asisten Cerdas Portofolio
+          </div>
         </div>
       </button>
 
       {/* Jendela Chat Ringkas & Responsif */}
       <div
-        className={`fixed bottom-20 lg:bottom-8 right-4 lg:right-8 z-50 w-[320px] sm:w-[360px] max-w-[calc(100vw-1.5rem)] h-[460px] sm:h-[500px] max-h-[calc(100vh-6rem)] bg-white rounded-2xl shadow-2xl border border-neutral-200 flex flex-col transition-all duration-300 origin-bottom-right font-sans overflow-hidden ${
+        className={`fixed bottom-4 sm:bottom-6 lg:bottom-8 right-4 lg:right-8 z-50 w-[320px] sm:w-[360px] max-w-[calc(100vw-1.5rem)] h-[500px] sm:h-[540px] max-h-[calc(100vh-3rem)] bg-white rounded-2xl shadow-2xl border border-neutral-200 flex flex-col transition-all duration-300 origin-bottom-right font-sans overflow-hidden ${
           isOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'
         }`}
       >
