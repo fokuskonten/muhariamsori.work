@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl overflow-hidden border border-neutral-300 bg-neutral-100 shrink-0">
                 <img
-                  src="/brand/muhari-profile.jpg"
+                  src="/brand/muhari-pasfoto-merah.jpg"
                   alt="Muhari Amsori"
                   className="w-full h-full object-cover"
                 />

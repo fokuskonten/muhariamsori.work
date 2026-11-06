@@ -1309,7 +1309,7 @@ export default function HomePage() {
             <div className="flex justify-center mb-6 fk-hero-in" style={{ '--hero-i': 1 }}>
               <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-neutral-900 shadow-md bg-neutral-100">
                 <img
-                  src="/brand/muhari-profile.jpg"
+                  src="/brand/muhari-pasfoto-merah.jpg"
                   alt="Muhari Amsori"
                   className="w-full h-full object-cover"
                 />
